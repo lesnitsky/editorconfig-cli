@@ -1,0 +1,77 @@
+#!/usr/bin/env node
+
+var fs       = require('fs');
+var path     = require('path');
+var inquirer = require('inquirer');
+
+var cwd = process.cwd();
+
+var questions = [{
+	name: 'root',
+	default: true
+}, {
+	name: 'charset',
+	type: 'list',
+	choices: ['utf-8', 'latin1', 'utf-16le', 'utf-16be']
+}, {
+	name: 'indent_style',
+	type: 'list',
+	choices: ['tab', 'space']
+}, {
+	name: 'indent_size',
+	default: 2
+}, {
+	name: 'end_of_line',
+	type: 'list',
+	choices: ['lf', 'crlf', 'cr']
+}, {
+	name: 'trim_trailing_whitespace',
+	type: 'confirm',
+	default: true
+}, {
+	name: 'insert_final_newline',
+	type: 'confirm',
+	default: true
+}];
+
+questions.forEach(function (q) {
+	q.message = q.name.split('_').join(' ') + '?';
+});
+
+inquirer.prompt(questions, done);
+
+function done(answers) {
+	var options = [];
+
+	var content = answers.root ? 'root = true' : '';
+	delete answers.root;
+
+	content += '\n\n';
+	content += '[*]\n';
+
+	for (var key in answers) {
+		options.push(key + ' = ' + answers[key]);
+	}
+
+	content = content + options.join('\n') + '\n';
+
+	process.stdout.write(content);
+
+	inquirer.prompt([{
+		name: 'ok',
+		message: 'Ok?',
+		default: true,
+		type: 'confirm'
+	}], function (answer) {
+		if (answer.ok) {
+			createEditorconfigFile(content);
+		} else {
+			process.stdout.write('\n');
+			inquirer.prompt(questions, done);
+		}
+	});
+}
+
+function createEditorconfigFile(content) {
+	fs.writeFileSync(path.join(cwd, '.editorconfig'), content);
+}

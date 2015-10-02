@@ -5,4 +5,5 @@ var version = require('../package.json').version;
 
 program
 	.version(version)
+	.command('init', 'create new .editorconfig')
 	.parse(process.argv);
