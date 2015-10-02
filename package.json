@@ -1,0 +1,31 @@
+{
+  "name": "editorconfig-cli",
+  "version": "0.1.0",
+  "description": "initialize .editorconfig in your bash",
+  "keywords": [
+    "editorconfig",
+    "cli",
+    "terminal",
+    "bash"
+  ],
+  "author": "Andrei Volchenko <volchenko.andrei@gmail.com>",
+  "contributors": [{
+    "name": "R1ZZU",
+    "email": "volchenko.andrei@gmail.com"
+  }],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/R1ZZU/editorconfig-cli"
+  },
+  "bugs": {
+    "url": "https://github.com/R1ZZU/editorconfig-cli/issues"
+  },
+  "license": "MIT",
+  "bin": {
+    "ec": "./bin/ec"
+  },
+  "dependencies": {
+    "commander": "^2.8.1",
+    "inquirer": "^0.10.1"
+  }
+}
