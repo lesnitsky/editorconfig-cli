@@ -13,4 +13,9 @@ program
 	.action(actions.init);
 
 program
+	.command('add-rules')
+	.description('add rules to existing .editorconfig file')
+	.action(actions.addRules)
+
+program
 	.parse(process.argv);
