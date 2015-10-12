@@ -2,8 +2,15 @@
 
 var program = require('commander');
 var version = require('../package.json').version;
+var actions = require('../lib/actions');
 
 program
-	.version(version)
-	.command('init', 'create new .editorconfig')
+	.version(version);
+
+program
+	.command('init')
+	.description('create new .editorconfig')
+	.action(actions.init);
+
+program
 	.parse(process.argv);
