@@ -1,6 +1,6 @@
 {
   "name": "editorconfig-cli",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "initialize .editorconfig in your bash",
   "keywords": [
     "editorconfig",
