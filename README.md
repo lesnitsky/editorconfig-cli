@@ -11,7 +11,7 @@ npm i -g editorconfig-cli
 ```sh
 ec init
 ```
-![usage](http://i.imgur.com/fZQVfbt.gif)
+![usage](http://i.imgur.com/Swvr12G.gif)
 
 #### Help
 ```sh
