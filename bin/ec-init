@@ -11,19 +11,12 @@ var questions = rules.map(function (rule) {
 	return rule.toQuestion();
 });
 
-questions.unshift({
-	name: 'root',
-	message: 'root?',
-	type: 'confirm'
-});
-
 inquirer.prompt(questions, done);
 
 function done(answers) {
 	var options = [];
 
-	var content = answers.root ? 'root = true' : '';
-	delete answers.root;
+	var content = 'root = true';
 
 	content += '\n\n';
 	content += '[*]\n';
