@@ -9,10 +9,12 @@
     "bash"
   ],
   "author": "Andrei Volchenko <volchenko.andrei@gmail.com>",
-  "contributors": [{
-    "name": "R1ZZU",
-    "email": "volchenko.andrei@gmail.com"
-  }],
+  "contributors": [
+    {
+      "name": "R1ZZU",
+      "email": "volchenko.andrei@gmail.com"
+    }
+  ],
   "repository": {
     "type": "git",
     "url": "https://github.com/R1ZZU/editorconfig-cli"
@@ -26,6 +28,7 @@
   },
   "dependencies": {
     "commander": "^2.8.1",
+    "editorconfig": "^0.13.0",
     "inquirer": "^0.10.1"
   }
 }
