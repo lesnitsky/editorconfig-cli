@@ -1,5 +1,5 @@
-### Editorconfig CLI
-initialize .editorconfig in your bash
+### 📝🔧 Editorconfig CLI
+Initialize .editorconfig in your terminal
 
 ---
 #### Installation
