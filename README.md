@@ -17,6 +17,11 @@ ec init
 ```
 ![usage](http://i.imgur.com/Swvr12G.gif)
 
+to use defaults w/o questionnaire:
+```sh
+ec init -y
+```
+
 ```sh
 ec add-rules
 ```

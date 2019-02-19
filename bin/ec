@@ -10,6 +10,7 @@ program
 program
 	.command('init')
 	.description('create new .editorconfig')
+	.option('-y, --yes', 'skip questionnaire')
 	.action(actions.init);
 
 program
