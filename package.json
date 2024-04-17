@@ -29,6 +29,11 @@
   "dependencies": {
     "commander": "^2.8.1",
     "editorconfig": "^0.13.0",
-    "inquirer": "^0.10.1"
+    "inquirer": "^1.2.3"
+  },
+  "scripts": {
+    "test:init": "node bin/ec init",
+    "test:init:y": "node bin/ec init -y",
+    "test:add-rules": "node bin/ec add-rules"
   }
 }
